@@ -2,7 +2,7 @@
 Estimate source emission rates from separated methane plumes using IME.
 
 Inputs: RESULT_BUNDLES_FOR_IME exported by the test script, and matching
-test-set labels containing 10m wind speeds(overlapping_plumes(2-8)-V2__Add_S10\test_dataset\labels).
+test-set labels containing 10m wind speeds(overlapping_plumes(2-8)-V2_Add_S10\test_dataset\labels).
 Outputs: plume masks with emission-rate annotations in PER_SAMPLE_MASK_PREVIEW,
 per-sample separation and quantification figures in PER_SAMPLE_Q_FIGS,
 and CSV statistics and a text report in the output directory.
