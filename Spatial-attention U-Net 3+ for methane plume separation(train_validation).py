@@ -21,9 +21,11 @@ from torch.utils.data import Dataset, DataLoader
 from scipy.optimize import linear_sum_assignment
 from scipy.ndimage import binary_dilation
 
-
+# Root directory for training and validation datasets
 DATA_ROOT = '<path_to_dataset>'
+
 OUT_ROOT = '<path_to_output_directory>'
+
 COMBINED_DIRNAME = 'combined_plumes'
 ALPHA_SIGNAL_SUM_EPS = 0.001
 SIGNAL_MASK_DILATE_ITERS = 1
