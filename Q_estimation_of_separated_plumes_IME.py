@@ -2,7 +2,7 @@
 Estimate source emission rates from separated methane plumes using IME.
 
 Inputs: RESULT_BUNDLES_FOR_IME exported by the test script, and matching
-test-set labels containing u10_list wind speeds.
+test-set labels containing 10m wind speeds(overlapping_plumes(2-8)-V2__Add_S10\test_dataset\labels).
 Outputs: plume masks with emission-rate annotations in PER_SAMPLE_MASK_PREVIEW,
 per-sample separation and quantification figures in PER_SAMPLE_Q_FIGS,
 and CSV statistics and a text report in the output directory.
@@ -20,28 +20,22 @@ from scipy.ndimage import (
     binary_dilation,
 )
 
-
-# the bundle directory exported by the test code
+# The bundle directory exported by the test script. Fill with the path of the output RESULT_BUNDLES_FOR_IME folder.
 INPUT_BUNDLE_DIR = r"...\RESULT_BUNDLES_FOR_IME"
+
 # the labels directory of the test set with U10
 TEST_LABEL_DIR = r"...\overlapping_plumes(2-8)-V2__Add_S10\test_dataset\labels"
 
 OUTPUT_DIR = r"<path_to_IME_output_directory>"
 
-
 MASK_PREVIEW_DIRNAME = "PER_SAMPLE_MASK_PREVIEW"
-
-
 MASK_OVERLAY_ALPHA = 0.22
 MASK_CONTOUR_LINEWIDTH = 1.0
 MASK_MARKER_SIZE = 35
 
-
 BASE_GT_Q_KGH = 3600.0
 
-
 GT_SCALE_KEY = "scale_list"
-
 
 PRED_COMPONENT_KEY = "pred_components"
 GT_COMPONENT_KEY   = "gt_components"
