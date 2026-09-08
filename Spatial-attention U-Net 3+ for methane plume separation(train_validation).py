@@ -21,7 +21,7 @@ from scipy.optimize import linear_sum_assignment
 from scipy.ndimage import binary_dilation
 
 # Root directory for training and validation datasets
-DATA_ROOT = '<path_to_dataset>'
+DATA_ROOT = r"...\overlapping_plumes(2-8)-V2"
 
 OUT_ROOT = '<path_to_output_directory>'
 
