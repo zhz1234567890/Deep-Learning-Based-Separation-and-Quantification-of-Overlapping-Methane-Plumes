@@ -21,9 +21,10 @@ from scipy.ndimage import (
 )
 
 
-INPUT_BUNDLE_DIR = r"<path_to_RESULT_BUNDLES_FOR_IME>"
-
-TEST_LABEL_DIR = r"<path_to_test_dataset/labels_with_u10_list>"
+# the bundle directory exported by the test code
+INPUT_BUNDLE_DIR = r"...\RESULT_BUNDLES_FOR_IME"
+# the labels directory of the test set with U10
+TEST_LABEL_DIR = r"...\overlapping_plumes(2-8)-V2__Add_S10\test_dataset\labels"
 
 OUTPUT_DIR = r"<path_to_IME_output_directory>"
 
