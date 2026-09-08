@@ -2,7 +2,7 @@
 Test a trained plume separation model using a labeled test set and its best
 model checkpoint.
 
-Inputs:best model checkpoint and a labeled test set
+Inputs:best model checkpoint and a labeled test set(test_dataset)
 Outputs: comparison figures for source counts 2-8 in ALL_GRIDS, data for
 later IME-based source emission-rate estimation in RESULT_BUNDLES_FOR_IME,
 and metrics_all.csv, evaluation_report.txt, and evaluation_report.xlsx.
