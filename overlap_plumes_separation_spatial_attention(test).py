@@ -27,7 +27,8 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 # NOT the path pointing directly to the training/validation dataset.
 # Example: If training set path is E:\Dataset\plums_emitbg_combined\02_plumes_library\overlapping_plumes(2‑8)‑V2\training_dataset
 # Set this value to: E:\Dataset\plums_emitbg_combined\02_plumes_library\overlapping_plumes(2‑8)‑V2
-DATA_ROOT = r"<path_to_dataset_root_containing_test_dataset>"
+
+DATA_ROOT = r"...\overlapping_plumes(2-8)-V2"
 
 CKPT_PATH = r"<path_to_trained_best_model/best.pt>"
 OUT_DIR = r"<path_to_test_output_directory>"
