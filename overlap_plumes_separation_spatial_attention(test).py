@@ -23,7 +23,10 @@ from scipy.ndimage import binary_dilation, label, binary_fill_holes
 from scipy.optimize import linear_sum_assignment
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
-
+# Root directory of the dataset. This is the parent folder of training and validation sets,
+# NOT the path pointing directly to the training/validation dataset.
+# Example: If training set path is E:\Dataset\plums_emitbg_combined\02_plumes_library\overlapping_plumes(2‑8)‑V2\training_dataset
+# Set this value to: E:\Dataset\plums_emitbg_combined\02_plumes_library\overlapping_plumes(2‑8)‑V2
 DATA_ROOT = r"<path_to_dataset_root_containing_test_dataset>"
 
 CKPT_PATH = r"<path_to_trained_best_model/best.pt>"
