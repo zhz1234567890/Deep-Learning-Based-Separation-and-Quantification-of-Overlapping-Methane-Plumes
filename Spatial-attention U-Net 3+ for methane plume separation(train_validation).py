@@ -3,9 +3,8 @@ Build a U-Net 3+ model with spatial attention for methane plume source
 separation. The script includes model training and validation procedures
 for model optimization and checkpoint selection.
 
-Input: Combined methane enhancement maps and per-source contribution labels.
-Output: Source contribution weights, mask logits, model checkpoints, and
-the training configuration.
+Input: Combined methane enhancement maps and per‑source contribution labels (`training_dataset`, `validation_dataset`)
+Output: Best checkpoint
 """
 
 import os
