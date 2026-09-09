@@ -44,7 +44,7 @@ The supplied configuration uses 60 m pixels, `Ueff = 0.4535 * U10 + 0.6541`, and
 
 ## Dataset download and reproduction
 
-**Download status:** The complete dataset archive has been prepared and checked locally. A public Zenodo record/DOI has not yet been added. The hosting-platform link below is not a dataset download link.
+**Download status:** Upload to Zenodo is in progress; the dataset is not yet published or available for download. The complete archive has been checked locally. The public record link and DOI will be added after upload and publication are verified. The hosting-platform link below is not a dataset download link.
 
 The dataset is intended to be distributed through [Zenodo](https://zenodo.org/), whose default 50 GB record capacity accommodates this archive and whose published records receive a DOI. See the [file limits](https://help.zenodo.org/docs/deposit/manage-files/) and [DOI documentation](https://help.zenodo.org/docs/deposit/describe-records/reserve-doi/). This section will be updated with the actual public record once upload and publication are complete.
 
