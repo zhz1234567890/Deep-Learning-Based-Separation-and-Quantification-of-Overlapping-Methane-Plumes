@@ -42,6 +42,47 @@ Extracts source-specific plume masks and estimates emission rates from the separ
 
 The supplied configuration uses 60 m pixels, `Ueff = 0.4535 * U10 + 0.6541`, and `Q_GT = 3600 * scale_list` in kg/h. Plume components must be in kg/m², and wind speeds in m/s. Check that these settings match the dataset being evaluated.
 
+## Dataset download and reproduction
+
+**Download status:** The complete dataset archive has been prepared and checked locally. A public Zenodo record/DOI has not yet been added. The hosting-platform link below is not a dataset download link.
+
+The dataset is intended to be distributed through [Zenodo](https://zenodo.org/), whose default 50 GB record capacity accommodates this archive and whose published records receive a DOI. See the [file limits](https://help.zenodo.org/docs/deposit/manage-files/) and [DOI documentation](https://help.zenodo.org/docs/deposit/describe-records/reserve-doi/). This section will be updated with the actual public record once upload and publication are complete.
+
+### Archive and checks
+
+- Archive: `paper_dataset_complete.zip`
+- Archive size: **15,219,652,224 bytes (15.22 GB; 14.17 GiB)**
+- Uncompressed file content: **14.15 GiB**, plus filesystem overhead.
+- Files: **96,601**
+- SHA-256: `6be7f3b96f78d7a934c99d2d7c4af57daf7e12080510598b1acd20cdd1301645`
+
+All input and label filenames match within each split, and all ZIP entries passed full CRC verification. These checks verify packaging and file pairing; they do not establish that the published scientific results have been reproduced.
+
+The release package also includes `SHA256SUMS.txt`, `dataset_inventory.json`, and `DATASET_README.md`. Keep approximately 35 GB or more free for downloading and extracting the archive, with additional space for training and prediction outputs.
+
+### Dataset contents
+
+| Dataset directory | Split | Input NPZ files | Label NPZ files | Preview PNG files |
+| --- | --- | ---: | ---: | ---: |
+| `overlapping_plumes(2-8)-V2` | Training | 28,000 | 28,000 | 28,000 |
+| `overlapping_plumes(2-8)-V2` | Validation | 2,800 | 2,800 | 2,800 |
+| `overlapping_plumes(2-8)-V2` | Test | 700 | 700 | 700 |
+| `overlapping_plumes(2-8)-V2_Add_S10` | Test with additional wind metadata | 700 | 700 | 700 |
+
+Validation inputs are included in this rebuilt archive. The two test directories are versions of the same test subset, not 1,400 independent test samples. The root includes `Dataset Documentation.txt`; `images_png` files are visual previews and are not read by the scripts.
+
+### Set paths after extraction
+
+Let `<EXTRACTED_ROOT>` denote the directory directly containing the two dataset folders. Replace it with the actual local path.
+
+1. **Train:** Set `DATA_ROOT` to `<EXTRACTED_ROOT>/overlapping_plumes(2-8)-V2`; configure the training output paths.
+2. **Test separation:** Set `DATA_ROOT` to `<EXTRACTED_ROOT>/overlapping_plumes(2-8)-V2_Add_S10`, `CKPT_PATH` to the trained `best.pt`, and `OUT_DIR` to the test output directory.
+3. **Quantify emissions:** Set `INPUT_BUNDLE_DIR` to `<TEST_OUTPUT>/RESULT_BUNDLES_FOR_IME`, `TEST_LABEL_DIR` to `<EXTRACTED_ROOT>/overlapping_plumes(2-8)-V2_Add_S10/test_dataset/labels`, and `OUTPUT_DIR` to the quantification output directory.
+
+The IME script reads `u10_list` from the matching wind-enriched test labels and `scale_list` from result bundles. Preserve sample IDs and source ordering throughout the workflow.
+
+No trained checkpoint is included in the dataset archive. Readers can train a model with the provided splits, or use a compatible author-provided `best.pt` when made available. Retraining does not guarantee identical numerical results to the paper; the exact checkpoint, software versions, and experimental settings should accompany any claim of reproducing the reported inference results.
+
 ## Data organization
 
 ```text
@@ -79,6 +120,6 @@ python "Q_estimation_of_separated_plumes_IME.py"
 
 The test script's `CKPT_PATH` should point to the training output `best.pt`. The IME script's `INPUT_BUNDLE_DIR` should point to the test output `RESULT_BUNDLES_FOR_IME`.
 
-Datasets and trained checkpoints are not included in this code upload. Dependency versions are not pinned, and a complete training-to-quantification run has not been validated as part of this upload.
+Data distribution status and the archive checks are described above. Dependency versions are not pinned, and a complete training-to-quantification run has not been validated as part of this upload.
 
 The existing `overlap_plumes_emitbg_with_switches-V1.12_Lratio_Lmask-(train).py` is retained as an earlier experimental training script. Use the three scripts described above for this workflow.
