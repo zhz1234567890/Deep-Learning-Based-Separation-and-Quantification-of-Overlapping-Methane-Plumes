@@ -44,7 +44,8 @@ The supplied configuration uses 60 m pixels, `Ueff = 0.4535 * U10 + 0.6541`, and
 
 ## Dataset download and reproduction
 
-**Download status:** Upload to Zenodo is in progress; the dataset is not yet published or available for download. The complete archive has been checked locally. The public record link and DOI will be added after upload and publication are verified. The hosting-platform link below is not a dataset download link.
+download link:
+[Zenodo](https://zenodo.org/records/22675242?preview=1&token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImM5M2JlZWZlLTNlYzItNDczZS1hYjZmLTM0ZTkzY2MwYTBjMyIsImRhdGEiOnt9LCJyYW5kb20iOiI4YWNjMDYwZDdjMjQ1NGUxMjA5YjRiMDg3MjE1YWRmZSJ9.EvUpMefSh-T8wkVnN7XzZb1oVJdgsjooAnZPnlzRuSGkbFZk7-UtIZsWpKJn14C5sIDMYcWOnO4oekPrXu34tQ)
 
 The dataset is intended to be distributed through [Zenodo](https://zenodo.org/), whose default 50 GB record capacity accommodates this archive and whose published records receive a DOI. See the [file limits](https://help.zenodo.org/docs/deposit/manage-files/) and [DOI documentation](https://help.zenodo.org/docs/deposit/describe-records/reserve-doi/). This section will be updated with the actual public record once upload and publication are complete.
 
@@ -120,6 +121,3 @@ python "Q_estimation_of_separated_plumes_IME.py"
 
 The test script's `CKPT_PATH` should point to the training output `best.pt`. The IME script's `INPUT_BUNDLE_DIR` should point to the test output `RESULT_BUNDLES_FOR_IME`.
 
-Data distribution status and the archive checks are described above. Dependency versions are not pinned, and a complete training-to-quantification run has not been validated as part of this upload.
-
-The existing `overlap_plumes_emitbg_with_switches-V1.12_Lratio_Lmask-(train).py` is retained as an earlier experimental training script. Use the three scripts described above for this workflow.
