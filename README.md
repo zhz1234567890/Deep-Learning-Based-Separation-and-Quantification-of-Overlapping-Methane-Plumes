@@ -44,10 +44,18 @@ The supplied configuration uses 60 m pixels, `Ueff = 0.4535 * U10 + 0.6541`, and
 
 ## Dataset download and reproduction
 
-download link:
-[Zenodo](https://zenodo.org/records/22675242?preview=1&token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImM5M2JlZWZlLTNlYzItNDczZS1hYjZmLTM0ZTkzY2MwYTBjMyIsImRhdGEiOnt9LCJyYW5kb20iOiI4YWNjMDYwZDdjMjQ1NGUxMjA5YjRiMDg3MjE1YWRmZSJ9.EvUpMefSh-T8wkVnN7XzZb1oVJdgsjooAnZPnlzRuSGkbFZk7-UtIZsWpKJn14C5sIDMYcWOnO4oekPrXu34tQ)
+The dataset is publicly available on **Figshare** under the **CC BY 4.0** license:
 
-The dataset is intended to be distributed through [Zenodo](https://zenodo.org/), whose default 50 GB record capacity accommodates this archive and whose published records receive a DOI. See the [file limits](https://help.zenodo.org/docs/deposit/manage-files/) and [DOI documentation](https://help.zenodo.org/docs/deposit/describe-records/reserve-doi/). This section will be updated with the actual public record once upload and publication are complete.
+- **Dataset and downloads:** [10.6084/m9.figshare.33733438](https://doi.org/10.6084/m9.figshare.33733438)
+- **Published version 1:** [10.6084/m9.figshare.33733438.v1](https://doi.org/10.6084/m9.figshare.33733438.v1)
+
+The release contains 29 binary archive parts and 6 supporting files. Download all parts (`paper_dataset_complete.zip.part001` through `.part029`), `parts_manifest.json`, and `reassemble_dataset.py` into the same folder. Run:
+
+```bash
+python reassemble_dataset.py
+```
+
+The script verifies the SHA-256 checksums and restores `paper_dataset_complete.zip`. Extract the restored ZIP normally; the individual parts cannot be extracted separately. See `DOWNLOAD_INSTRUCTIONS.md` in the Figshare record for details.
 
 ### Archive and checks
 
@@ -59,7 +67,7 @@ The dataset is intended to be distributed through [Zenodo](https://zenodo.org/),
 
 All input and label filenames match within each split, and all ZIP entries passed full CRC verification. These checks verify packaging and file pairing; they do not establish that the published scientific results have been reproduced.
 
-The release package also includes `SHA256SUMS.txt`, `dataset_inventory.json`, and `DATASET_README.md`. Keep approximately 35 GB or more free for downloading and extracting the archive, with additional space for training and prediction outputs.
+The release package also includes `SHA256SUMS.txt`, `dataset_inventory.json`, and `DATASET_README.md`. Keep approximately 50 GB or more free for the downloaded parts, restored ZIP, and extracted data, with additional space for training and prediction outputs.
 
 ### Dataset contents
 
