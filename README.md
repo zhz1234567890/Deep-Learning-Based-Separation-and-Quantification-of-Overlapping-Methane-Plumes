@@ -42,6 +42,26 @@ Extracts source-specific plume masks and estimates emission rates from the separ
 
 The supplied configuration uses 60 m pixels, `Ueff = 0.4535 * U10 + 0.6541`, and `Q_GT = 3600 * scale_list` in kg/h. Plume components must be in kg/m², and wind speeds in m/s. Check that these settings match the dataset being evaluated.
 
+## Example separation and quantification results
+
+Illustrative test examples with **N = 2, 4, 6, and 8** point sources. Each figure shows the combined methane plume, ground-truth (GT) and predicted (Pred) components, plume masks, and IME emission-rate estimates. These selected examples are for visualization, not a summary of performance over the full test set. Click an image to view it at full resolution.
+
+### N = 2 — sample_030817
+
+[![Separation and IME example with 2 point sources](examples/N_2.png)](examples/N_2.png)
+
+### N = 4 — sample_031062
+
+[![Separation and IME example with 4 point sources](examples/N_4.png)](examples/N_4.png)
+
+### N = 6 — sample_031233
+
+[![Separation and IME example with 6 point sources](examples/N_6.png)](examples/N_6.png)
+
+### N = 8 — sample_031487
+
+[![Separation and IME example with 8 point sources](examples/N_8.png)](examples/N_8.png)
+
 ## Dataset download and reproduction
 
 The dataset is publicly available on **Figshare** under the **CC BY 4.0** license:
